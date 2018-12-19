@@ -1,0 +1,46 @@
+wd
+ls
+
+gcloud config list
+
+gsutil mb --help
+
+gsutil ls
+gsutil ls gs://mmtechsoft/
+gsutil ls gs://mmtechsoft/**
+
+
+
+gsutil cp spmohst.txt gs://mmtechsoft/
+gsutil mb -l northamerica-northeast1 gs://mmtechsoft
+gsutil ls
+
+gsutil label get gs://mmtechsoft/
+gsutil label get gs://mmtechsoft/ >bucketlabels.json
+cat bucketlabels.json
+
+gsutil label get gs://mmtechsoft/
+gsutil label set bucketlabels.json gs://mmtechsoft/
+gsutil label get gs://mmtechsoft/
+
+gsutil label ch -l "extralabel:extravalue" gs://mmtechsoft
+
+gsutil versioning get gs://mmtechsoft/
+gsutil versioning set on gs://mmtechsoft/
+gsutil versioning get gs://mmtechsoft/
+
+gsutil ls gs://mmtechsoft/
+gsutil cp README-cloudshell.txt gs://mmtechsoft/
+gsutil ls gs://mmtechsoft/
+
+gsutil ls gs://mmtechsoft/
+gsutil ls -a gs://mmtechsoft/
+gsutil rm gs://mmtechsoft/README-cloudshell.txt
+gsutil ls gs://mmtechsoft/
+gsutil ls -a gs://mmtechsoft/
+
+gsutil cp gs://mmtechsoft/** gs://mmtechsoft/
+gsutil ls gs://mmtechsoft/
+gsutil ls -a gs://mmtechsoft/
+
+gsutil acl ch -u AllUsers:R gs://mmtechsoft/Selfie.jp

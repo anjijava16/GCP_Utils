@@ -1,10 +1,6 @@
-wd
-ls
-
 gcloud config list
 
 gsutil mb --help
-
 gsutil ls
 gsutil ls gs://mmtechsoft/
 gsutil ls gs://mmtechsoft/**

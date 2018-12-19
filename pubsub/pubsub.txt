@@ -1,0 +1,88 @@
+Streaming Data Chanllenges
+  It is Unbounded data
+  Infinte,never complete ,always flowing
+  
+  Ex: CreditCard ,Mobile Gaming,Traffic Sensors
+  
+  Tighly Coupled Vs Loosely Coupled 
+  Sender-->Reciver  
+  
+  
+  Loosely Coupled:
+    Publiser ---> Buffer MessageBus --->Subscriber
+	One publiser  or multiple Publiser
+	One Subscriber or Multiple Subscriber
+	
+	
+	Cloud Logs
+	Cloud API
+	Cloud DataFlows   <<<   ====>> Cloud Pub/Sub  Here 
+	Cloud Storage
+	Cloud Engine 
+	
+	
+	Cloud Networking,Cloud Compute Engine,DataFlows,AppEngine,Cloud Monitroing
+	
+	Publisher -->Messge -->Topic ---> MessageStorage -->
+	                         Subscription-->Message -->Suscriber 
+							 
+   Pub/Sub Can eiether Push messages to Subscriber (OR) Subscriber can pull message from Pub/Sub
+   Push ==> Lower latency ,more real time
+   Push Susbcriber must be Webhook endpoints that accepts POST over HTTPS
+   Pull ideal for Large volume if messages ---batch delivery
+   
+   IAM : Service Accounts are best Practise
+   
+   
+   30  gcloud pubsub help
+   
+   Step 1: Create Topic
+   32  gcloud pubsub topics create  my-topic
+   
+   Step 2: List of Topics
+   34  gcloud pubsub topics list
+   
+   36  gcloud pubsub subscriptions create --topic my-topic mySub1
+   39  gcloud pubsub subscriptions  pull --auto-ack mySub1
+   
+   
+   
+   ### Pusblisher Messages::
+   gcloud pubsub topics publish my-topic --message "Hellow Welcome WOrld"
+   
+   ### Create Subscriptions
+   gcloud pubsub topics subscriptions create --topic my-topic mySub1
+   
+   ### Retrive messages with Subscription,acknowledge
+   gcloud pubsub suscriptions pull--auto-ack mySub1
+   
+   ### Cacnel subscriptions
+   gcloud pubsub subscriptions delete mySub1
+   
+   
+   pull Data take some time
+   
+$gcloud pubsub subscriptions pull MyTopic 
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
